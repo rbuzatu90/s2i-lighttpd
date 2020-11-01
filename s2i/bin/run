@@ -7,4 +7,5 @@
 #	https://github.com/openshift/source-to-image/blob/master/docs/builder_image.md
 #
 
-exec lighttpd -D -f /opt/app-root/etc/lighttpd.conf
+#exec lighttpd -D -f /opt/app-root/etc/lighttpd.conf
+exec tail -f /var/log/messages
