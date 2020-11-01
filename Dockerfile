@@ -17,16 +17,16 @@ LABEL io.k8s.description="Platform for serving static HTML files" \
 #RUN yum install -y epel-release
 
 # Import the EPEL GPG-key
-RUN rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+#RUN rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
 
 # Update the repositories
 #RUN yum -y update
 
 # Install the required software, namely Lighttpd and
-RUN yum install -y lighttpd && \
+#RUN yum install -y lighttpd && \
     # clean yum cache files, as they are not needed and will only make the image bigger in the end
-    yum clean all -y
-
+#    yum clean all -y
+RUN yum install -y httpd
 # Copy the S2I scripts to /usr/libexec/s2i which is the location set for scripts
 # in openshift/base-centos7 as io.openshift.s2i.scripts-url label
 COPY ./s2i/bin/ /usr/libexec/s2i
