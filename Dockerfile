@@ -33,7 +33,7 @@ COPY ./s2i/bin/ /usr/libexec/s2i
 
 # Copy the lighttpd configuration file
 COPY ./myapp.py /opt/app-root/src/
-
+RUN echo hi
 # Drop the root user and make the content of /opt/openshift owned by user 1001
 RUN chown -R 1001:1001 /opt/app-root
 RUN touch /opt/app-root/lol
