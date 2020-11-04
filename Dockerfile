@@ -26,7 +26,7 @@ LABEL io.k8s.description="Platform for serving static HTML files" \
 #RUN yum install -y lighttpd && \
     # clean yum cache files, as they are not needed and will only make the image bigger in the end
 #    yum clean all -y
-RUN yum install -y httpd
+#RUN yum install -y httpd
 # Copy the S2I scripts to /usr/libexec/s2i which is the location set for scripts
 # in openshift/base-centos7 as io.openshift.s2i.scripts-url label
 COPY ./s2i/bin/ /usr/libexec/s2i
