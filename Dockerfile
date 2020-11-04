@@ -32,11 +32,11 @@ LABEL io.k8s.description="Platform for serving static HTML files" \
 COPY ./s2i/bin/ /usr/libexec/s2i
 
 # Copy the lighttpd configuration file
-#COPY ./etc/ /opt/app-root/etc
+COPY ./etc/ /opt/app-root/etc
 
 # Drop the root user and make the content of /opt/openshift owned by user 1001
-#RUN chown -R 1001:1001 /opt/app-root
-#RUN touch /opt/app-root/lol
+RUN chown -R 1001:1001 /opt/app-root
+RUN touch /opt/app-root/lol
 
 # Set the default user for the image, the user itself was created in the base image
 USER 1001

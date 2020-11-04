@@ -8,4 +8,4 @@
 #
 
 #exec lighttpd -D -f /opt/app-root/etc/lighttpd.conf
-exec watch date
+exec tail -f /opt/app-root/lol
