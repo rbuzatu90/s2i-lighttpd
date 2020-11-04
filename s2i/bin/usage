@@ -1,2 +1,2 @@
 #!/bin/bash
-watch date
+gunicorn myapp:application

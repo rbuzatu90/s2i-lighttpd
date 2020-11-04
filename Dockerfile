@@ -32,12 +32,15 @@ LABEL io.k8s.description="Platform for serving static HTML files" \
 COPY ./s2i/bin/ /usr/libexec/s2i
 
 # Copy the lighttpd configuration file
-COPY ./etc/ /opt/app-root/etc
+COPY ./myapp.py /opt/app-root/src/
 
 # Drop the root user and make the content of /opt/openshift owned by user 1001
 RUN chown -R 1001:1001 /opt/app-root
 RUN touch /opt/app-root/lol
-
+RUN yum install -y python-setuptools
+RUN easy_install pip
+RUN pip install gunicorn
+RUN pip install flask
 # Set the default user for the image, the user itself was created in the base image
 USER 1001
 
