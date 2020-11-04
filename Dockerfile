@@ -45,4 +45,4 @@ USER 1001
 EXPOSE 8080
 
 # Set the default CMD to print the usage of the image, if somebody does docker run
-CMD ["/usr/libexec/s2i/usage"]
+#CMD ["/usr/libexec/s2i/usage"]
