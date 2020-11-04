@@ -8,4 +8,4 @@
 #
 
 #exec lighttpd -D -f /opt/app-root/etc/lighttpd.conf
-exec tail -f /var/log/messages
+exec watch date
