@@ -45,7 +45,7 @@ RUN pip install flask
 USER 1001
 
 # Specify the ports the final image will expose
-EXPOSE 8080
+EXPOSE 80
 
 # Set the default CMD to print the usage of the image, if somebody does docker run
-CMD ["/usr/libexec/s2i/usage"]
+CMD ["/usr/libexec/s2i/run"]
