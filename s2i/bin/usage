@@ -1,2 +1,2 @@
 #!/bin/bash
-gunicorn -b :1234 myapp:application
+gunicorn -b :8080 myapp:application
