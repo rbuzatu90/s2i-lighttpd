@@ -11,7 +11,7 @@ def hello():
 def return_hostname():
     app = os.environ['app']
     if app:
-      return "Hostname {} {} \n".format(app, socket.gethostname())
+      return "Hostname from app {} is {} \n".format(app, socket.gethostname())
     else:
       return "Hostname {} \n".format(socket.gethostname())
 
