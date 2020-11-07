@@ -5,7 +5,7 @@ FROM openshift/base-centos7
 #MAINTAINER Maciej Szulik <maszulik@redhat.com>
 
 # Inform about software versions being used inside the builder
-ENV LIGHTTPD_VERSION=1.4.35
+ENV app=lol
 
 # Set labels used in OpenShift to describe the builder images
 LABEL io.k8s.description="Platform for serving static HTML files" \
