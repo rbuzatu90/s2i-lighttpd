@@ -1,2 +1,5 @@
 #!/bin/bash -e
+if [ -v app ]; then
+    sed "s/Hostname/Hostname from $app/g" myapp.py
+fi
 exec gunicorn -b :1234 myapp:application
