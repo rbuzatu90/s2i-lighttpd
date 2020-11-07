@@ -9,7 +9,7 @@ def hello():
 
 @application.route("/")
 def return_hostname():
-    app = os.environ['HOME']
+    app = os.environ['app']
     if app:
       return "Hostname {} {} \n".format(app, socket.gethostname())
     else:
