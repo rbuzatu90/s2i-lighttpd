@@ -1,10 +1,2 @@
 #!/bin/bash -e
-if [ -v app ]; then
-    sed  "s/Hostname/Hostname from $app/g" myapp.py > myapp.py.tmp
-    mv myapp.py.tmp myapp.py
-else
-   echo === No app ENV set ===
-fi
-echo === Listing ENVs ===
-env
 exec gunicorn -b :1234 myapp:application

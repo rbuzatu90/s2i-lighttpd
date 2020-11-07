@@ -1,4 +1,5 @@
 from flask import Flask
+import os
 import socket
 application = Flask(__name__)
 
@@ -8,7 +9,11 @@ def hello():
 
 @application.route("/")
 def return_hostname():
-    return "Hostname {} \n".format(socket.gethostname())
+    app = os.environ['HOME']
+    if app:
+      return "Hostname {} {} \n".format(app, socket.gethostname())
+    else:
+      return "Hostname {} \n".format(socket.gethostname())
 
 if __name__ == "__main__":
     application.run()
